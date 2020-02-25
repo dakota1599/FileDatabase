@@ -1,2 +1,2 @@
-# WebBlogApp
-Simple blog web app that people can create accounts on and post blog posts to.
+# PollApp
+Simple poll web app that people can create polls on and vote and what not.
