@@ -9,9 +9,9 @@ class SQL{
     public $status; //The status of the connection.
 
     //Constructor that will call the connect method.
-    public function __construct($host, $dbname, $user, $pass)
+    public function __construct(array $data)
     {
-        $this->status = $this->connect($host, $dbname, $user, $pass);
+        $this->status = $this->connect($data['host'], $data['dbname'], $data['user'], $data['pass']);
         
     }
 
