@@ -1,4 +1,6 @@
 <?php
+//Requiring all data classes in one place.
+require 'core/classes.php';
 
 //Requiring Controllers (No Autoload cause confusing)
 require "controllers/StaticPageController.php";
@@ -36,7 +38,7 @@ class Router{
 
 	protected function toAction($class, $method){
 		$class = new $class();
-		return $class->$method();
+		$class->$method();
 	}
 
 }

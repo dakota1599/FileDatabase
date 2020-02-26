@@ -1,3 +1,3 @@
 <p>Hello This is the home page<br>
-<?=var_dump($db)?>
+<?=var_dump($data->data)?>
 </p>
