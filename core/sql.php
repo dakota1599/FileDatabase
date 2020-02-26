@@ -49,11 +49,14 @@ class SQL{
         $this->ret_array[$count];
         $this->direct_edit($sql);
 
-        while($row = $this->statement->fetch(PDO::FETCH_CLASS, $class)){
-            $this->ret_array[$count] = $row;
+        $i = 0; //Iteration variable
+        while($row = $this->statement->fetch(PDO::FETCH_CLASS, $class)
+        || $i < $count){ //Until the list of items ends or count is reached.
+            $this->ret_array[$i] = $row; //Stores the rows in an array.
+            $i++; //Plus
         }
 
-        return $this->ret_array;
+        return $this->ret_array; //Returns the array.
     }
 
 
