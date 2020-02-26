@@ -4,6 +4,7 @@
 class SQL{
 
     //Backing Fields
+    protected $ret_array; //The array for retrieving only a certain number of items.
     protected $db; //The actual database variable being wrapped.
     protected $statement; //For making statements.
     public $status; //The status of the connection.
@@ -38,9 +39,21 @@ class SQL{
 
     //Retrieving database info and returning it as a class.  Must always be returned to a
     //class.
-    public function retrieve($sql, $class = ""){
+    public function retrieve_all($sql, $class = ""){
         $this->direct_edit($sql);
         return $this->statement->fetchAll(PDO::FETCH_CLASS, $class);
+    }
+    
+    //For retrieving a specified number of items.
+    public function retrieve($sql, $class = "", $count){
+        $this->ret_array[$count];
+        $this->direct_edit($sql);
+
+        while($row = $this->statement->fetch(PDO::FETCH_CLASS, $class)){
+            $this->ret_array[$count] = $row;
+        }
+
+        return $this->ret_array;
     }
 
 
