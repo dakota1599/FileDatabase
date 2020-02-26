@@ -13,7 +13,7 @@ $web = 'https://example.com/';
 require 'core/bootstrap.php';
 
 //Calls the diret function from the router variable.
-$router->Direct(Request::uri());
+require $router->Direct(Request::uri());
 
 
 ?>

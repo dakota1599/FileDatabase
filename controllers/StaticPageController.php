@@ -4,6 +4,7 @@
 class StaticPageController{
 
     public function home(){
+        return $this->View("home");
     }
 
     public function about(){
@@ -15,7 +16,7 @@ class StaticPageController{
 
 
     protected function View($fileName){
-	require 'views/$fileName.view.php';
+	    return "views/$fileName.view.php";
     }
 
 

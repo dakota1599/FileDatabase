@@ -1,6 +1,8 @@
 <?php
 
+//Requiring Controllers (No Autoload cause confusing)
 require "controllers/StaticPageController.php";
+require "controllers/AccountController.php";
 
 class Router{
 
@@ -34,7 +36,7 @@ class Router{
 
 	protected function toAction($class, $method){
 		$class = new $class();
-		$class->$method();
+		return $class->$method();
 	}
 
 }

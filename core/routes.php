@@ -4,7 +4,9 @@
 	$routes = [
 		"" => "StaticPageController@home",
 		"about" => "StaticPageController@about",
-		"contact" => "StaticPageController@contact"
+		"contact" => "StaticPageController@contact",
+		"signup" => "AccountController@signup",
+		"signin" => "AccountController@signin"
 
 	];
 
