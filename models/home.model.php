@@ -15,8 +15,9 @@
         //Loads the most recent 25 polls
         public function load_recent(){
             $this->recent_polls =
-            $this->data->retrieve("Select * From Polls
-            Sort UploadDate;", "Poll", 25);
+            $this->data->retrieve_all("Select * From Polls
+            Sort UploadDate
+            Limit 25;", "Poll");
         }
     }
 
