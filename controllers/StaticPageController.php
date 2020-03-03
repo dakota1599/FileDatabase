@@ -4,7 +4,10 @@
 class StaticPageController{
 
     public function home(){
-        $data = new HomeModel();
+
+        if($_SESSION['Validation']){
+            $data = new HomeModel();
+        }
         require $this->View("home");
     }
 

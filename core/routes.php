@@ -6,7 +6,9 @@
 		"about" => "StaticPageController@about",
 		"contact" => "StaticPageController@contact",
 		"signup" => "AccountController@signup",
-		"signin" => "AccountController@signin"
+		"signin" => "AccountController@signin",
+		"upload" => "FileController@upload",
+		"download" => "FileController@download"
 
 	];
 

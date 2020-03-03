@@ -9,6 +9,7 @@ class Account{
     public $AuthLevel;
     public $Likes;
     public $UName;
+    public $Picture;
 }
 
 
