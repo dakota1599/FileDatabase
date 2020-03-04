@@ -1,4 +1,11 @@
+<?php require 'partials/header.partial.php'; ?>
 
+
+<script>
+
+
+    
+</script>
 
 <?php if(true) { ?>
 
@@ -20,11 +27,17 @@
         <!--For loop to push out the files-->
         <?php for($i = 0; $i < count($data->files); $i++){ ?>
             <!--List that is repeated out for each file-->
-            <li><a href="http://dl.dakotashapiro.info/?ID=<?=$data->files[$i]->ID?>&FileName=<?=$data->files[$i]->Title?>" download>
+            <li><a id="<?=$data->files[$i]->ID?>" href="http://dl.dakotashapiro.info/?ID=<?=$data->files[$i]->ID?>&FileName=<?=$data->files[$i]->Title?>" download>
                 <?=$data->files[$i]->Title?>
-            </a></li>
+            </a>
+             | 
+            <button  onclick="FileDelete(<?=$data->files[$i]->ID?>)">Delete</button>
+            </li>
         <?php } ?>
         </ul>
     </div>
 
 <?php } ?>
+
+
+<?php require 'partials/footer.partial.php'; ?>

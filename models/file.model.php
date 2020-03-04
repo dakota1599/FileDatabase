@@ -36,6 +36,11 @@ class FileModel extends Model{
             echo $e->getMessage();
         }
     }
+
+    //For Deleting records
+    public function delete($ID){
+        $this->data->direct_edit("Delete From Files Where ID = '$ID';");
+    }
 }
 
 

@@ -29,7 +29,7 @@ if(!isset($_SERVER['HTTPS'])){
 }
 */
 
-$web = 'https://example.com/';
+$web = 'http://eonweb.ga/';
 
 //This bootstrap file sets up all the necessary stuff.
 require 'core/bootstrap.php';

@@ -8,7 +8,7 @@
 		"signup" => "AccountController@signup",
 		"signin" => "AccountController@signin",
 		"upload" => "FileController@upload",
-		"download" => "FileController@download"
+		"delete" => "FileController@delete"
 
 	];
 

@@ -1,4 +1,4 @@
 <?php
-$web = 'https://dakotashapiro.info/';
+$web = 'http://eonweb.ga/';
 
 ?>
