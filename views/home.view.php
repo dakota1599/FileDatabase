@@ -20,8 +20,8 @@
         <!--For loop to push out the files-->
         <?php for($i = 0; $i < count($data->files); $i++){ ?>
             <!--List that is repeated out for each file-->
-            <li><a href="/download?contents=<?=$data->files[$i]->Contents?>&name=<?=$data->files[$i]->Name?>" download>
-                <?=$files[$i]->Name?>
+            <li><a href="http://dl.dakotashapiro.info/?ID=<?=$data->files[$i]->ID?>&FileName=<?=$data->files[$i]->Title?>" download>
+                <?=$data->files[$i]->Title?>
             </a></li>
         <?php } ?>
         </ul>

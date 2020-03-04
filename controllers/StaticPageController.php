@@ -1,13 +1,11 @@
 <?php
     require 'models/home.model.php'; 
 
-class StaticPageController{
+class StaticPageController extends Controller{
 
     public function home(){
-
-        if($_SESSION['Validation']){
-            $data = new HomeModel();
-        }
+        $data = new HomeModel($this->data);
+        $data->load_files();
         require $this->View("home");
     }
 

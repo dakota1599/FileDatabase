@@ -1,14 +1,7 @@
 <?php 
+    
 
-
-class FileModel{
-
-    public $data;
-
-    public function __construct()
-    {
-        $this->data = require 'core/data.bootstrap.php';
-    }
+class FileModel extends Model{
 
     public function upload(){
         try{
@@ -25,15 +18,21 @@ class FileModel{
         $username = $_SESSION['UName'];
 
         //Gets the current date
-        $date = date("m/d/Y");
+        $date = date("Y-d-m");
+
+        //Gets the file size;
+        $size = $_FILES['file']['size'];
 
         //Encodes the info into Base64
         $contents = base64_encode($contents);
 
         //Sends the picture info to the server
-        $this->data->direct_edit("Insert into Files(Title, UName, UploadDate, Contents)
-        Values('$name','$username','$date','$contents';");
+        $this->data->direct_edit("Insert into Files(Title, UName, UploadDate, Contents, Size)
+        Values('$name','$username','$date','$contents', '$size');");
+
+        return 'Success';
         }catch(Exception $e){
+            return 'Failed';
             echo $e->getMessage();
         }
     }

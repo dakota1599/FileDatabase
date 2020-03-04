@@ -1,6 +1,4 @@
 <?php
-//Requiring all data classes in one place.
-require 'core/classes.php';
 
 //Requiring Controllers (No Autoload cause confusing)
 require "controllers/StaticPageController.php";
@@ -10,11 +8,13 @@ require "controllers/FileController.php";
 class Router{
 
 	private $routes = [];
+	private $data;
 
 	//Constructor for setting up the routes.
-	function __construct(array $routes){
+	function __construct(array $routes, $db){
 
 		$this->Define($routes);
+		$this->data = $db;
 	}
 
 	//This function defines the routes.
@@ -38,7 +38,7 @@ class Router{
 
 
 	protected function toAction($class, $method){
-		$class = new $class();
+		$class = new $class($this->data);
 		$class->$method();
 	}
 

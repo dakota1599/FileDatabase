@@ -6,6 +6,7 @@ class File{
     public $UName;
     public $UploadDate;
     public $Contents;
+    public $Size;
 }
 
 

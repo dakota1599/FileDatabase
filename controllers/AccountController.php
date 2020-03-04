@@ -1,6 +1,6 @@
 <?php 
 
-class AccountController{
+class AccountController extends Controller{
 
     public function signup(){
 
