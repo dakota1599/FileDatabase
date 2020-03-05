@@ -15,6 +15,25 @@ class AccountModel extends Model{
         //Otherwise it returns false.
         return "false";
     }
+
+
+    //Adds a user to the database.
+    public function add_user($email, $user, $pass){
+        //In case this fails, a try catch will present an error.
+        try{
+            $this->data->direct_edit("Insert into Accounts (Email, Pass, AuthLevel, UName)
+            Values('$email','$pass','1','$user');");
+            return true;
+        }catch(Exception $e){
+            return $e->getMessage();
+        }
+    }
+
+    public function signin($user, $pass){
+        //Returns the record for further validation.
+        return $this->data->retrieve_all("Select * From Accounts Where
+        UName='$user' and Pass='$pass';", "Account");
+    }
 }
 
 ?>

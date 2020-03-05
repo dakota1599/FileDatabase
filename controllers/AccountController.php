@@ -5,7 +5,19 @@ class AccountController extends Controller{
 
     public function signup(){
         if(Request::RequestMethod() == "POST"){
+            $email = strtolower($_POST['email']);
+            $user = strtolower($_POST['user']);
+            $pass = $_POST['pass'];
 
+            $this->model = new AccountModel($this->data);
+            //If true, then the system will set the session variables and route the user to the account page.
+            if($this->model->add_user($email,$user,$pass)){
+                $_SESSION['email'] = $email;
+                $_SESSION['user'] = $user;
+                $_SESSION['pass'] = $pass;
+                $_SESSION['auth'] = 1;
+                header("Location: /profile");
+            }
         }else{
             require $this->View("sign");
         }
@@ -13,6 +25,32 @@ class AccountController extends Controller{
 
     public function signin(){
         if(Request::RequestMethod() == "POST"){
+            $user = strtolower($_POST['user']);
+            $pass = $_POST['pass'];
+            $dest = $_POST['dest'];
+
+            $this->model = new AccountModel($this->data);
+
+            $account = $this->model->signin($user, $pass);
+
+            //Validates the record for the last time.
+            if($user == $account[0]->UName && $pass == $account[0]->Pass){
+                
+                //Sets the session variables.
+                $_SESSION['email'] = $account[0]->Email;
+                $_SESSION['user'] = $account[0]->UName;
+                $_SESSION['pass'] = $account[0]->Pass;
+                $_SESSION['auth'] = $account[0]->AuthLevel;
+                if($dest != ""){
+                    header("Location: /$dest");
+                }else{
+                    header("Location: /");
+                }
+            }else{
+                //Presents error message back on the signin page in case the info doesn't pass validation.
+                $error = "Username or password is incorrect.";
+                require $this->View("sign");
+            }
 
         }else{
             require $this->View("sign");
@@ -21,8 +59,8 @@ class AccountController extends Controller{
 
     //Verifies that a username is not already taken.  Collects the username in question.
     public function verify(){
-        $user = $_GET['User'];
-        $email = $_GET['Email'];
+        $user = strtolower($_GET['User']);
+        $email = strtolower($_GET['Email']);
         $this->model = new AccountModel($this->data);
         echo $this->model->check_username($user);
 
@@ -34,7 +72,12 @@ class AccountController extends Controller{
         }
 
         //Returns both answers in a comma delimitted fashion.
-        echo $user.",".$email;
+        echo ",".$email;
+    }
+
+
+    public function profile(){
+
     }
 
 

@@ -9,17 +9,16 @@ if (empty($_SESSION['token'])) {
 $token = $_SESSION['token'];
 ?>
 
-<script>
-    signup();
-</script>
-
 <div class="TopItem Center" id="signin">
     <h1>Sign In</h1>
     <form action="/signin" method="post" class="w3-form">
         <input class="w3-input" type="text" name="user" placeholder="Username">
         <input class="w3-input" type="password" name="pass" placeholder="Password">
         <button class="w3-button" type="submit">Submit</button>
+
+        <input name="dest" value="<?=$_GET['dest']?>" class="Hide">
     </form>
+    <p id="error" style="color:red"><?=$error;?></p>
     <a href="#" onclick="sign()">New here?  Create an account!</a>
 </div>
 
@@ -30,7 +29,7 @@ $token = $_SESSION['token'];
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Email should follow this rule: someone@website.com">
         <input id="testUser" class="w3-input" type="text" name="user" placeholder="Username">
         <input title="Make at least 8 characters long." id="pass1" class="w3-input" type="password" name="pass" placeholder="Password">
-        <input id="pass2" class="w3-input" type="password" name="pass" placeholder="ReType Password">
+        <input id="pass2" class="w3-input" type="password" placeholder="ReType Password">
         <button class="w3-button" type="button" onclick="verify()">Submit</button>
 
         <input name="token" value="<?=$token?>" class="Hide">
