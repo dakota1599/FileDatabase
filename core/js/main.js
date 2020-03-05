@@ -4,16 +4,14 @@ function signout(){
     var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                response = this.responseText;
-                //Calls a seperate function to do continued verification with the server's information.
-                cVerify(this.responseText);
+                //Reploads the page after after Session variables are deleted.
+                location.reload();
             }
         };
         xmlhttp.open("GET", "/signout", true);
         xmlhttp.send();
         
-        //Reploads the page after after Session variables are deleted.
-        location.reload();
+        
 }
 
 //End of header functions.

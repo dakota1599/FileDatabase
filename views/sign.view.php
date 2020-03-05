@@ -18,7 +18,7 @@ $token = $_SESSION['token'];
 
         <input name="dest" value="<?=$_GET['dest']?>" class="Hide">
     </form>
-    <p id="error" style="color:red"><?=$error;?></p>
+    <p style="color:red"><?=$error;?></p>
     <a href="#" onclick="sign()">New here?  Create an account!</a>
 </div>
 
@@ -31,7 +31,7 @@ $token = $_SESSION['token'];
         <input title="Make at least 8 characters long." id="pass1" class="w3-input" type="password" name="pass" placeholder="Password">
         <input id="pass2" class="w3-input" type="password" placeholder="ReType Password">
         <button class="w3-button" type="button" onclick="verify()">Submit</button>
-
+        <p id="error" style="color:red"></p>
         <input name="token" value="<?=$token?>" class="Hide">
     </form>
     <p id="error" style="color:red"></p>
