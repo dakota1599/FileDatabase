@@ -14,10 +14,8 @@ function FileDelete(id){
         xmlhttp.open("GET", "/delete?ID=" + id, true);
         xmlhttp.send();
 
-        sleep(1200);
-
-        //Reloads the page.
-        location.reload();
+        //Deletes the Row.
+        obj.parent().remove();
     }
 }
 

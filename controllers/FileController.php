@@ -18,10 +18,7 @@ class FileController extends Controller{
         $this->model->delete($_GET['ID']);
     }
 
-    //View Method
-    protected function View($fileName){
-        return "views/$fileName.view.php";
-    }
+    
 
 }
 

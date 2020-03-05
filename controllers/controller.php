@@ -8,6 +8,11 @@ class Controller{
         $this->data = $db;
     }
 
+    //View Method
+    protected function View($fileName){
+        return "views/$fileName.view.php";
+    }
+
 }
 
 

@@ -1,6 +1,7 @@
 <?php
 require 'request.php';
 require 'classes.php';
+require 'cons_mods.php';
 require 'sql.php';
 require 'routes.php';
 require 'router.php';
