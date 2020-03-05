@@ -4,16 +4,11 @@ require 'partials/header.partial.php';
 ?>
 
 
-<script>
-
-
-    
-</script>
 
 <?php if(true) { ?>
 
     <!--Upload File-->
-    <div id="uploadFile">
+    <div id="uploadFile" class="TopItem">
         <form action="/upload" method="post" enctype="multipart/form-data">
         <input type="file" name="file[]" multiple>
         <button type="submit">Upload</button>

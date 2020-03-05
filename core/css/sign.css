@@ -1,0 +1,15 @@
+.TopItem{
+    margin-top: 4.5em !important;
+}
+.Center{
+    margin:auto;
+    text-align:center;
+}
+
+.Hide{
+    display:none;
+}
+form{
+    margin:auto;
+    width: 20em;
+}

@@ -3,7 +3,6 @@ require 'models/file.model.php';
 
 class FileController extends Controller{
 
-    protected $model;
 
     //Method for file upload
     public function upload(){
