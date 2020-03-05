@@ -17,7 +17,7 @@ class AccountController extends Controller{
                 $_SESSION['pass'] = $pass;
                 $_SESSION['auth'] = 1;
                 $_SESSION['validated'] = true;
-                header("Location: /profile");
+                header("Location: /");
             }
         }else{
             require $this->View("sign");

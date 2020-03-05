@@ -29,6 +29,7 @@ require 'partials/header.partial.php';
                 <?=$data->files[$i]->Title?>
             </a>
              | 
+             <?=$data->files[$i]->UploadDate?>
             <button  onclick="FileDelete(<?=$data->files[$i]->ID?>)">Delete</button>
             </li>
         <?php } ?>
