@@ -7,7 +7,9 @@
 
         //Loads the most recent 25 polls
         public function load_files(){
-            $this->files = $this->data->retrieve_all("Select Title, Size, ID From Files", "File");
+            $user = $_SESSION['user'];
+            $this->files = $this->data->retrieve_all("Select Title, Size, ID, UploadDate From Files
+            Where UName = '$user';", "File");
         }
     }
 

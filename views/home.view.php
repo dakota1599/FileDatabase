@@ -5,7 +5,7 @@ require 'partials/header.partial.php';
 
 
 
-<?php if(true) { ?>
+<?php if($_SESSION['validated']) { ?>
 
     <!--Upload File-->
     <div id="uploadFile" class="TopItem">
@@ -34,6 +34,9 @@ require 'partials/header.partial.php';
         <?php } ?>
         </ul>
     </div>
+
+<?php } else { ?>
+
 
 <?php } ?>
 

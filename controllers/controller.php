@@ -14,6 +14,14 @@ class Controller{
         return "views/$fileName.view.php";
     }
 
+    //For validating use login in all controllers.
+    protected function Validate(){
+        if($_SESSION['validated']){
+            return true;
+        }
+        return false;
+    }
+
 }
 
 

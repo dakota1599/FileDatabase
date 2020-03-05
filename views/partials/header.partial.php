@@ -15,6 +15,10 @@ require 'core/variables.php';
 </head>
 <body>
 <div class="w3-top w3-bar">
-<a href="/signin" class="w3-bar-item w3-button w3-padding-16 w3-mobile w3-right">Sign In</a>
+<?php if($_SESSION['validated']) { ?>
+    <a href="#" onclick="signout()" class="w3-bar-item w3-button w3-padding-16 w3-mobile w3-right">Sign Out</a>
+<?php } else { ?>
+    <a href="/signin" class="w3-bar-item w3-button w3-padding-16 w3-mobile w3-right">Sign In</a>
+<?php } ?>
 
 </div>

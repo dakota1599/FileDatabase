@@ -16,6 +16,7 @@ class AccountController extends Controller{
                 $_SESSION['user'] = $user;
                 $_SESSION['pass'] = $pass;
                 $_SESSION['auth'] = 1;
+                $_SESSION['validated'] = true;
                 header("Location: /profile");
             }
         }else{
@@ -41,6 +42,7 @@ class AccountController extends Controller{
                 $_SESSION['user'] = $account[0]->UName;
                 $_SESSION['pass'] = $account[0]->Pass;
                 $_SESSION['auth'] = $account[0]->AuthLevel;
+                $_SESSION['validated'] = true;
                 if($dest != ""){
                     header("Location: /$dest");
                 }else{
@@ -78,6 +80,11 @@ class AccountController extends Controller{
 
     public function profile(){
 
+    }
+
+    //Purges the session array of all its contents.
+    public function signout(){
+        $_SESSION = Array();
     }
 
 

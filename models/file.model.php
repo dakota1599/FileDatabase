@@ -23,7 +23,7 @@ class FileModel extends Model
                 $name = $cFile[$i]['name'];
 
                 //Gets User's username
-                $username = $_SESSION['UName'];
+                $username = $_SESSION['user'];
 
                 //Gets the current date
                 $date = date("Y-d-m");

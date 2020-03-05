@@ -8,7 +8,7 @@ class FileController extends Controller{
     public function upload(){
         $this->model = new FileModel($this->data);
         $result = $this->model->upload();
-        require $this->View("upload");
+        header("Location: /");
     }
     
     //Collects info and directs to the delete function of the model.
