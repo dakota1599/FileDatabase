@@ -54,6 +54,35 @@ function loadedFiles(){
         $("#files").parent().submit();
     }
 }
+
+function updateInfo(){
+    var response = verify($("#user").val(), $("#email").val());
+
+    switch(response){
+        case 0:
+            break;
+        case 1:
+            break;
+        case 2:
+            break;
+    }
+}
+
+//List out the files for upload
+function listFiles(){
+    var files = $("#files")[0].files;
+    var result = "";
+
+
+    for (var i =0; i < files.length; i++){
+        result += files[i].name+"<br>";
+    }
+    $("#filesList").html(result);
+}
+
+function delistFiles(){
+    $("#filesList").html("");
+}
 //End of home page functions.
 
 
@@ -66,16 +95,14 @@ function sign(){
 }
 
 //To verify sign up information that existing usernames and passwords.
-function verify(){
-    var userName = $("#testUser").val();
-    var email = $("#email").val();
+function verify(userName = $("#testUser").val(), email = $("#email").val()){
     var response; //Response from server.
     var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 response = this.responseText;
                 //Calls a seperate function to do continued verification with the server's information.
-                cVerify(this.responseText);
+                return cVerify(this.responseText);
             }
         };
         xmlhttp.open("GET", "/verify?User=" + userName + "&Email=" + email, true);
@@ -118,6 +145,15 @@ function cVerify(response){
         $("#error").html("Please enter valid email.");
     }else{
         $("#signup form").submit();
+    }
+
+    //This return is for updating information after account creation.
+    if(response[0] == "true"){
+        return 1;
+    }else if(response[1] == "false"){
+        return 2;
+    }else{
+        return 0;
     }
 }
 

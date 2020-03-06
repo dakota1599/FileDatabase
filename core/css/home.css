@@ -1,5 +1,6 @@
 .TopItem{
-    margin-top: 4.5em;
+    margin: 4.5em auto auto;
+    width: 100%;
 }
 .Delete{
     border: none;
@@ -17,12 +18,70 @@
     max-width: 100%;
     background:red;
     color:white;
+    cursor: pointer;
 }
 #fileLibrary{
     margin: 1em 2em;
-    display: inline-block;
     width: 40em;
+    float:left;
 }
+
+#ProfileInfo{
+    margin: 84px 2em 0;
+    width: 40em;
+    float:right;
+}
+
+#uploadFile{
+    margin:auto;
+    text-align:center;
+    display: block
+}
+.upload{
+    height: 50px;
+    margin: 0 2em 2.5em;
+    transition: .4s;
+    font-weight: bold;
+}
+.upload:hover{
+    background: #591228 !important;
+    color:white !important;
+}
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    width:50px;
+    height: 50px;
+    color: white;
+    background-color: #591228;
+    display: inline-block;
+    background-image: url("http://eonweb.ga/core/resources/upload.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: inherit;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.inputfile + label:hover {
+    background-color: red;
+    cursor: pointer;
+}
+#filesList{
+    background-color: #C7D0D7;
+    text-align:left;
+    float:right;
+    width: 50%;
+}
+
 .Table{
     width: 100%;
     

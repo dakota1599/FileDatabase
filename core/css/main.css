@@ -13,15 +13,40 @@
   margin: auto;
   text-align: center;
   color: #591228;
+  width: 100%;
+  display: inline-block;
 }
 .EchoTitle {
   float: left;
+  font-weight: bold;
 }
 .Hide {
   display: none !important;
 }
 .Show {
   display: block !important;
+}
+
+/*Colors */
+.darkBlueFg {
+  color: #1c2d44;
+}
+.darkBlueBg {
+  background: #1c2d44;
+}
+
+.darkRedFg {
+  color: #591228;
+}
+.darkRedBg {
+  background: #591228;
+}
+
+.whiteFg {
+  color: white;
+}
+.whiteBg {
+  background: white;
 }
 
 @media only screen and (max-width: 650px) {
