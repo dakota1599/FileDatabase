@@ -41,7 +41,17 @@ function FileDelete(id){
         xmlhttp.send();
 
         //Deletes the Row.
-        obj.parent().remove();
+        obj.parent().parent().remove();
+    }
+}
+
+//Checks to make sure that files have been loaded before sent to the server.
+function loadedFiles(){
+    if($("#files").val() == ""){
+        alert("Must upload a file.");
+    }
+    else{
+        $("#files").parent().submit();
     }
 }
 //End of home page functions.

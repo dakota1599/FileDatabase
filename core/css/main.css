@@ -1,0 +1,36 @@
+.TopBar {
+  background: #1c2d44;
+  color: white;
+  margin-bottom: 2em;
+}
+.TopButton {
+  transition: 0.4s !important;
+}
+.TopButton:hover {
+  color: #591228 !important;
+}
+.footer {
+  margin: auto;
+  text-align: center;
+  color: #591228;
+}
+.EchoTitle {
+  float: left;
+}
+.Hide {
+  display: none !important;
+}
+.Show {
+  display: block !important;
+}
+
+@media only screen and (max-width: 650px) {
+  .EchoTitle {
+    float: none !important;
+    display: inline-block;
+    text-align: center;
+  }
+  .TopButton {
+    display: none !important;
+  }
+}

@@ -1,3 +1,64 @@
 .TopItem{
     margin-top: 4.5em;
 }
+.Delete{
+    border: none;
+    max-width:15px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: .4s;
+    text-align:center;
+    padding:0;
+    display:block;
+    margin:auto;
+}
+.Delete:hover{
+    max-width: 100%;
+    background:red;
+    color:white;
+}
+#fileLibrary{
+    margin: 1em 2em;
+    display: inline-block;
+    width: 40em;
+}
+.Table{
+    width: 100%;
+    
+}
+.TBody{
+    height: 30em;
+    overflow: auto;
+}
+.TopRow{
+    border-bottom: 4px solid #1C2D44;
+    background: #1C2D44;
+    color:white;
+}
+.tr{
+    transition:.4s;
+    background: #C7D0D7;
+}
+.tr:hover{
+    background: lightskyblue;
+}
+.tdName{
+    width: 50%;
+}
+.tdDate{
+    width: 25%;
+    text-align:center;
+}
+.tdDelete{
+    margin:auto;
+    text-align:center !important;
+}
+.a, .a:link, .a:active{
+    color: #591228;
+    text-decoration: none;
+    transition: .4s;
+}
+.a:hover{
+    color: #AE1228;
+}
