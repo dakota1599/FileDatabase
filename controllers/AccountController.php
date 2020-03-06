@@ -1,5 +1,5 @@
 <?php 
-require 'models/account.model.php';
+
 class AccountController extends Controller{
 
 

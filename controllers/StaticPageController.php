@@ -1,5 +1,5 @@
 <?php
-    require 'models/home.model.php'; 
+
 
 class StaticPageController extends Controller{
 

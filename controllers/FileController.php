@@ -1,5 +1,5 @@
 <?php 
-require 'models/file.model.php';
+
 
 class FileController extends Controller{
 

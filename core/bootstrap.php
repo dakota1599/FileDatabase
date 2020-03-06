@@ -1,7 +1,19 @@
 <?php
+
+//Controllers
+require 'controllers/Controller.php';
+require "controllers/StaticPageController.php";
+require "controllers/AccountController.php";
+require "controllers/FileController.php";
+
+//Models
+require 'models/Model.php';
+require 'models/account.model.php';
+require 'models/file.model.php';
+require 'models/home.model.php'; 
+
 require 'request.php';
 require 'classes.php';
-require 'cons_mods.php';
 require 'sql.php';
 require 'routes.php';
 require 'router.php';

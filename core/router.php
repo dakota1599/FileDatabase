@@ -1,10 +1,5 @@
 <?php
 
-//Requiring Controllers (No Autoload cause confusing)
-require "controllers/StaticPageController.php";
-require "controllers/AccountController.php";
-require "controllers/FileController.php";
-
 class Router{
 
 	private $routes = [];
