@@ -30,6 +30,27 @@ function signout() {
 
 
 //Home page functions.
+
+//Searches for the desired file by removing the others
+function search() {
+    //Grabs the array of links.
+    var items = $(".item").toArray();
+    //Loops through all the values.
+    for (var i = 0; i < items.length; i++) {
+        if (items[i].innerHTML.toLowerCase().search($("#search").val().toLowerCase()) == -1) {
+            //Sets the element's grandparent to display none.
+            items[i].parentElement.parentElement.style.display = "none";
+        } else {
+            //Sets the element's grandparent to display normal.
+            items[i].parentElement.parentElement.style.display = "";
+        }
+    }
+
+
+}
+
+//This is so when the user wants to update something like their email, the validation system
+//doesn't stop them because their username "already exists in the database."
 function setOriginalVars() {
     user = $("#user").val();
 }

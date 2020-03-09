@@ -6,6 +6,7 @@ require 'partials/header.partial.php';
 
 
 
+
 <?php if ($_SESSION['validated']) { ?>
 <div class="TopItem">
 
@@ -13,6 +14,7 @@ require 'partials/header.partial.php';
     <!--File Library-->
     <div id="fileLibrary">
         <h1>Your Files</h1>
+        <input class="w3-input" placeholder="Search" type="text" id="search" onkeyup="search()">
         <table class="w3-table Table" style="margin-bottom:0;">
             <tbody>
                 <tr class="TopRow">
@@ -45,7 +47,7 @@ require 'partials/header.partial.php';
 
                     <tr class="tr">
                         <td class="tdName">
-                            <a class="a" id="<?= $data->files[$i]->ID ?>"
+                            <a class="a item" id="<?= $data->files[$i]->ID ?>"
                                 href="<?= $web ?>core/download.php?ID=<?= $data->files[$i]->ID ?>&FileName=<?= $data->files[$i]->Title ?>
                                 &Key=<?=$key?>"
                                 download title="Click to Download">

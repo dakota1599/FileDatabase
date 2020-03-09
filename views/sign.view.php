@@ -1,4 +1,5 @@
-<?php 
+<?php
+$title = "Sign In";
 $css = "sign.css";
 require 'partials/header.partial.php';
 
