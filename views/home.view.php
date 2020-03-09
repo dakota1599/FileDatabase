@@ -33,13 +33,21 @@ require 'partials/header.partial.php';
             <table class="w3-table Table">
                 <tbody>
                     <!--For loop to push out the files-->
-                    <?php for ($i = 0; $i < count($data->files); $i++) { ?>
+                    <?php
+                    //Initializes the key array.
+                    $_SESSION['key'] = array(count($data->files));
+                    for ($i = 0; $i < count($data->files); $i++) { 
+                        //For security, each file is given a unique key.
+                            $key = rand(100000, 999999);
+                            $_SESSION['key'][$data->files[$i]->ID] = $key;
+                        ?>
                     <!--List that is repeated out for each file-->
 
                     <tr class="tr">
                         <td class="tdName">
                             <a class="a" id="<?= $data->files[$i]->ID ?>"
-                                href="<?= $web ?>core/download.php?ID=<?= $data->files[$i]->ID ?>&FileName=<?= $data->files[$i]->Title ?>"
+                                href="<?= $web ?>core/download.php?ID=<?= $data->files[$i]->ID ?>&FileName=<?= $data->files[$i]->Title ?>
+                                &Key=<?=$key?>"
                                 download title="Click to Download">
                                 <?= $data->files[$i]->Title ?>
                             </a>
