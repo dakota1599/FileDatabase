@@ -51,6 +51,19 @@ class FileModel extends Model
         $this->data->direct_edit("Delete From Files Where ID = '$ID';");
     }
 
+    //Pulls records from the database to see if a file exists.
+    public function exists($name, $user){
+        $file = $this->data->retrieve_all("Select * From Files
+        Where Title = '$name' and UName = '$user';");
+
+        //If the returned file is not empty, returns true for file exists.
+        if($file[0] != null){
+            return true;
+        }
+        //Returns false as a default.
+        return false;
+    }
+
 
     //Reformats the incoming files into a better array.  Stolen from php.net.
     private function reArrayFiles(&$file_post)

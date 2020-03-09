@@ -78,10 +78,32 @@ function FileDelete(id) {
 
 //Checks to make sure that files have been loaded before sent to the server.
 function loadedFiles() {
+    var files = $("#files")[0].files;
     if ($("#files").val() == "") {
         alert("Must upload a file.");
     } else {
-        $("#files").parent().submit();
+        for (var i = 0; i < files.length; i++) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    if (this.responseText == "true") {
+                        if (prompt(files[i] + " exists.  Would you like to replace it?")) {
+                            continue;
+                        } else {
+                            files.splice(i, 1);
+                        }
+                    }
+                }
+            };
+
+
+            xmlhttp.open("GET", "/exists?name=" + files[i], true);
+            xmlhttp.send();
+        }
+
+        if (files.length != 0) {
+            $("#files").parent().submit();
+        }
     }
 }
 

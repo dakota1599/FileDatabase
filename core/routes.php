@@ -13,7 +13,8 @@
 		"delete" => "FileController@delete",
 		"verify" => "AccountController@verify",
 		"signout" => "AccountController@signout",
-		"updateinfo" => "AccountController@updateInfo"
+		"updateinfo" => "AccountController@updateInfo",
+		"exists" => "FileController@exists"
 
 	];
 

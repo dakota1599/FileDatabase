@@ -17,6 +17,14 @@ class FileController extends Controller{
         $this->model->delete($_GET['ID']);
     }
 
+
+    //Gathers file name and username and calls the file method.
+    public function exists(){
+        $name = $_GET['name'];
+        $this->model = new FileModel($this->data);
+        echo $this->model->exsits($name, $_SESSION['user']);
+    }
+
     
 
 }
