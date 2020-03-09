@@ -1,3 +1,20 @@
+* {
+  transition: 0.4s;
+}
+
+.hr {
+  display: block;
+  height: 1px;
+  border: 2em;
+  border-top: 3px solid #591228;
+  border-radius: 10%;
+  margin: auto;
+  padding: 0;
+  width: 75%;
+}
+
+/*Navigation*/
+
 .TopBar {
   background: #1c2d44;
   color: white;
@@ -8,6 +25,17 @@
 }
 .TopButton:hover {
   color: #591228 !important;
+}
+/*End of Navigation*/
+.button {
+  height: 50px;
+  margin: 0 2em 2.5em;
+  transition: 0.4s;
+  font-weight: bold;
+}
+.button:hover {
+  background: #591228 !important;
+  color: white !important;
 }
 .footer {
   margin: auto;
@@ -47,15 +75,4 @@
 }
 .whiteBg {
   background: white;
-}
-
-@media only screen and (max-width: 650px) {
-  .EchoTitle {
-    float: none !important;
-    display: inline-block;
-    text-align: center;
-  }
-  .TopButton {
-    display: none !important;
-  }
 }

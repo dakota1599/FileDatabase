@@ -8,7 +8,7 @@ require 'sql.php';
 require 'config.php';
 
 //If the key matches the session key, then the server processes the request.
-if ($_GET['Key'] == (string)$_SESSION['key'][$_GET['ID']]) {
+if (hash_equals($_GET['Key'],(string)$_SESSION['key'][$_GET['ID']])) {
 
     $ID = $_GET['ID'];
     //Database bootstrap

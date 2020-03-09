@@ -4,7 +4,7 @@ class AccountController extends Controller{
 
 
     public function signup(){
-        if(Request::RequestMethod() == "POST"){
+        if(Request::RequestMethod() == "POST" && hash_equals($_POST['token'], $_SESSION['token'])){
             $email = strtolower($_POST['email']);
             $user = strtolower($_POST['user']);
             $pass = $_POST['pass'];
@@ -19,6 +19,7 @@ class AccountController extends Controller{
                 $_SESSION['validated'] = true;
                 header("Location: /");
             }
+            
         }else{
             require $this->View("sign");
         }
@@ -77,6 +78,17 @@ class AccountController extends Controller{
         echo ",".$email;
     }
 
+    //Function collects update info to update user's personal information.
+    public function updateInfo(){
+        if(Request::RequestMethod() == "POST"){
+            $this->model = new AccountModel($this->data);
+            $this->model->updateInfo($_POST['user'], $_POST['email'], $_SESSION['user']);
+            $_SESSION['user'] = $_POST['user'];
+            $_SESSION['email'] = $_POST['email'];
+            Header("Location: /");
+        }
+    }
+
 
     public function profile(){
 
@@ -89,6 +101,3 @@ class AccountController extends Controller{
 
 
 }
-
-
-?>

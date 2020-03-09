@@ -69,7 +69,7 @@ require 'partials/header.partial.php';
             <form action="/upload" method="post" enctype="multipart/form-data">
                 <input class="inputFile" id="files" type="file" name="file[]" multiple>
                 <label for="files"></label>
-                <button onmouseover="listFiles()" onmouseout="delistFiles()" class="w3-button w3-round-medium upload" id="sub" type="button" onclick="loadedFiles()">Upload</button>
+                <button onmouseover="listFiles()" onmouseout="delistFiles()" class="w3-button w3-round-medium button" id="sub" type="button" onclick="loadedFiles()">Upload</button>
                 <p id="filesList"></p>
             </form>
 
@@ -78,30 +78,39 @@ require 'partials/header.partial.php';
     <!--End of File Library-->
 
     <div id="ProfileInfo">
-        <tr class="w3-form Table">
+        <form action="/updateinfo" method="post" class="w3-form Table">
             <table class="w3-table">
                 <tbody>
                     <tr class="TopRow">
                         <th colspan="2">Personal Information</th>
                     </tr>
                     <tr>
-                        <td>
-                            <input type="text" class="w3-input" id="user" name="user" value="<?= $_SESSION['user'] ?>">
+                        <td class="infoLabel">
+                            <input onfocus="setOriginalVars()" type="text" class="w3-input" id="user" name="user" value="<?= $_SESSION['user'] ?>">
+                            <br>
+                            <p>Username</p>
                         </td>
-                        <td>
-                            <input type="text" class="w3-input" id="email" name="user"
+                        <td class="infoLabel">
+                            <input onfocus="setOriginalVars()" type="text" class="w3-input" id="email" name="email"
                                 value="<?= $_SESSION['email'] ?>">
+                                <br>
+                            <p>Email</p>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <button onclick="updateInfo()" type="button" class="w3-button"
-                                style="display:block; margin:auto;">Update Info</button>
+                            <button onclick="updateInfo()" type="button"
+                                style="display:block; margin:auto;" class="w3-button w3-round-medium button">Update Info</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p id="error" style="text-align:center;"></p>
                         </td>
                     </tr>
                 </tbody>
             </table>
-        </tr>
+        </form>
     </div>
 </div>
 

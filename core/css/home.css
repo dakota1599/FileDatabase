@@ -1,64 +1,66 @@
-.TopItem{
+.TopItem {
+    text-align: center;
     margin: 4.5em auto auto;
     width: 100%;
 }
-.Delete{
+
+.Delete {
     border: none;
-    max-width:15px;
+    max-width: 15px;
     width: 100%;
     height: 100%;
     background: transparent;
     transition: .4s;
-    text-align:center;
-    padding:0;
-    display:block;
-    margin:auto;
+    text-align: center;
+    padding: 0;
+    display: block;
+    margin: auto;
 }
-.Delete:hover{
+
+.Delete:hover {
     max-width: 100%;
-    background:red;
-    color:white;
+    background: red;
+    color: white;
     cursor: pointer;
 }
-#fileLibrary{
+
+#fileLibrary {
+    display: inline-block;
     margin: 1em 2em;
     width: 40em;
-    float:left;
 }
 
-#ProfileInfo{
+#ProfileInfo {
+    display: inline-block;
     margin: 84px 2em 0;
     width: 40em;
-    float:right;
+    height: 36em;
 }
 
-#uploadFile{
-    margin:auto;
-    text-align:center;
-    display: block
-}
-.upload{
-    height: 50px;
-    margin: 0 2em 2.5em;
-    transition: .4s;
+.infoLabel {
+    line-height: 1px;
     font-weight: bold;
 }
-.upload:hover{
-    background: #591228 !important;
-    color:white !important;
+
+#uploadFile {
+    margin: auto;
+    text-align: center;
+    display: block
 }
+
 .inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
 }
-.inputfile + label {
+
+.inputfile+label {
     font-size: 1.25em;
     font-weight: 700;
-    width:50px;
+    width: 50px;
     height: 50px;
     color: white;
     background-color: #591228;
@@ -71,53 +73,81 @@
     border-radius: 50%;
 }
 
-.inputfile + label:hover {
+.inputfile+label:hover {
     background-color: red;
     cursor: pointer;
 }
-#filesList{
+
+#filesList {
     background-color: #C7D0D7;
-    text-align:left;
-    float:right;
+    text-align: left;
+    float: right;
     width: 50%;
 }
 
-.Table{
+.Table {
     width: 100%;
-    
 }
-.TBody{
+
+.TBody {
     height: 30em;
     overflow: auto;
 }
-.TopRow{
+
+.TopRow {
     border-bottom: 4px solid #1C2D44;
     background: #1C2D44;
-    color:white;
+    color: white;
 }
-.tr{
-    transition:.4s;
+
+.tr {
+    transition: .4s;
     background: #C7D0D7;
 }
-.tr:hover{
+
+.tr:hover {
     background: lightskyblue;
 }
-.tdName{
+
+.tdName {
     width: 50%;
 }
-.tdDate{
+
+.tdDate {
     width: 25%;
-    text-align:center;
+    text-align: center;
 }
-.tdDelete{
-    margin:auto;
-    text-align:center !important;
+
+.tdDelete {
+    margin: auto;
+    text-align: center !important;
 }
-.a, .a:link, .a:active{
+
+.a,
+.a:link,
+.a:active {
     color: #591228;
     text-decoration: none;
     transition: .4s;
 }
-.a:hover{
+
+.a:hover {
     color: #AE1228;
+}
+
+@media only screen and (max-width: 800px) {
+    #fileLibrary {
+        width: 25em;
+    }
+    #ProfileInfo {
+        width: 25em;
+    }
+    #uploadFile {
+        margin: 2em auto 0;
+    }
+    #filesList {
+        float: none;
+        margin: auto;
+        width: 25em;
+    }
 }

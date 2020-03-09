@@ -35,22 +35,30 @@ if($_SESSION['validated']){
 
 
     <style>
-        *, h1, h2, h3, h4, h5, h6{
-            font-family: 'Oxanium', cursive;
-        }
+    *,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Oxanium', cursive;
+    }
     </style>
 
 </head>
 
 <body>
     <div class="w3-top w3-bar TopBar w3-card-4">
-        <span id="echo" style="font-size: inherit;" class="w3-bar-item w3-padding-16 EchoTitle">Echo Logo</span>
+        <span id="echo" style="font-size: inherit;"
+            class="w3-bar-item w3-padding-16 EchoTitle">Echo</span>
 
 
         <?php if ($_SESSION['validated']) { ?>
-            <a id="log" href="#" onclick="signout()" class="w3-bar-item w3-button w3-padding-16 w3-right TopButton">Sign Out</a>
+        <a id="log" onclick="signout()" class="w3-bar-item w3-button w3-padding-16 w3-right TopButton">Sign
+            Out</a>
         <?php } else { ?>
-            <a id="log" href="/signin" class="w3-bar-item w3-button w3-padding-16 w3-right TopButton">Sign In</a>
+        <a id="log" href="/signin" class="w3-bar-item w3-button w3-padding-16 w3-right TopButton">Sign In</a>
         <?php } ?>
 
     </div>

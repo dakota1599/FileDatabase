@@ -12,7 +12,8 @@
 		//The Following are routes that will return no page.  Asynchronous use only.
 		"delete" => "FileController@delete",
 		"verify" => "AccountController@verify",
-		"signout" => "AccountController@signout"
+		"signout" => "AccountController@signout",
+		"updateinfo" => "AccountController@updateInfo"
 
 	];
 

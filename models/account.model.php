@@ -34,6 +34,15 @@ class AccountModel extends Model{
         return $this->data->retrieve_all("Select * From Accounts Where
         UName='$user' and Pass='$pass';", "Account");
     }
+
+    //Updates user email and username by identifying the user's current username in the database.
+    //Also updates the files so that they have the updated user credentials.
+    public function updateInfo($nUser, $email, $user){
+        $this->data->direct_edit("Update Accounts Set UName = '$nUser', Email = '$email' 
+        Where UName = '$user';
+        Update Files Set UName = '$nUser'
+        Where UName = '$user';");
+    }
 }
 
 ?>
