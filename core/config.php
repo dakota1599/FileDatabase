@@ -1,12 +1,12 @@
 <?php 
 
-    //Secured Database information
+    //Secured Database information, omitted.
     return [
         'database' => [
-            "host" => "pdb36.awardspace.net",
-            "dbname" => "3000723_blogapp",
-            "user" => "3000723_blogapp",
-            "pass" => "sundog40"
+            "host" => "",
+            "dbname" => "",
+            "user" => "",
+            "pass" => ""
         ]
     ];
 
