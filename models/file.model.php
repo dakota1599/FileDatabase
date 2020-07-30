@@ -26,7 +26,7 @@ class FileModel extends Model
                 $username = $_SESSION['user'];
 
                 //Gets the current date
-                $date = date("Y-d-m");
+                $date = date("Y-m-d");
 
                 //Gets the file size;
                 $size = $cFile[$i]['size'];

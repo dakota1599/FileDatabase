@@ -77,6 +77,7 @@ function FileDelete(id) {
 }
 
 //Checks to make sure that files have been loaded before sent to the server.
+/*
 function loadedFiles() {
     var files = $("#files")[0].files;
     if ($("#files").val() == "") {
@@ -106,6 +107,7 @@ function loadedFiles() {
         }
     }
 }
+*/
 
 //To update user's personal information.
 function updateInfo() {

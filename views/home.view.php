@@ -71,7 +71,7 @@ require 'partials/header.partial.php';
             <form action="/upload" method="post" enctype="multipart/form-data">
                 <input class="inputFile" id="files" type="file" name="file[]" multiple>
                 <label for="files"></label>
-                <button onmouseover="listFiles()" onmouseout="delistFiles()" class="w3-button w3-round-medium button" id="sub" type="button" onclick="loadedFiles()">Upload</button>
+                <button onmouseover="listFiles()" onmouseout="delistFiles()" class="w3-button w3-round-medium button" id="sub" type="submit">Upload</button>
                 <p id="filesList"></p>
             </form>
 
